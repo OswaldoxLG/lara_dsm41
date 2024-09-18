@@ -6,3 +6,7 @@ abstract class Controller
 {
     //
 }
+
+
+function Function1(){
+}
