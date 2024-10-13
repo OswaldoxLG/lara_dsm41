@@ -11,9 +11,12 @@ class Usuarios extends Model
 
     protected $table ="usuarios";
 
-    protected $fillable = ['name', 'email'];
+    protected $fillable = ['nombre', 'email', 'password'];
 
     protected $primaryKey = 'id';
 
     public $timestamps = false;
+
+    protected $hidden = ['created_at','updated_at'];
+
 }

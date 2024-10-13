@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Usuarios;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -12,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('usuarios', function (Blueprint $table) {
+        Schema::create('telefonos', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email');
-            $table->string('password');
+            $table->string('numero');
             $table->timestamps();
         });
     }
@@ -26,11 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('usuarios');
-    }
-
-    public function list(){
-        $usuarios = Usuarios::paginate(4);
-        return view('usuarios.index', compact('usuarios'));
+        Schema::dropIfExists('telefonos');
     }
 };
